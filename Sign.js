@@ -30,5 +30,13 @@ mc.listen("onJoin",(pl) => {
     }
 })
 
+mc.listen('onServerStarted',() => {
+    if (!mc.getAllScoreObjectives().includes('sign')) {
+        mc.newScoreObjective('daily')
+        mc.newScoreObjective('sign')
+        colorLog('yellow',`第一次加載本插件，功能已成功加载`)
+    }
+})
+
 log('Daily Sign插件已加載')
 log('Written By:Samilcup')
