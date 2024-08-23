@@ -5,7 +5,7 @@ mc.listen("onServerStarted", () => {
         var op = mc.getOnlinePlayers();
         for (let index = 0; index < op.length; index++) {
             if (op[index].isOP()) {
-                op[index].tell(`§e玩家${player.name}使用設備${dv.os},玩家IP是:${dv.ip},玩家加入是的延遲是${dv.avgPing}`, 0); 
+                op[index].tell(`§l§e玩家${player.name}使用設備${dv.os},玩家IP是:${dv.ip},玩家加入是的延遲是${dv.avgPing}`, 0); 
             }
         }
         colorLog("yellow", `玩家${player.name}使用設備${dv.os},玩家IP是:${dv.ip},玩家加入是的延遲是${dv.avgPing}`)

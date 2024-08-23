@@ -27,7 +27,7 @@ mc.listen("onPlayerCmd", (player, cmd) => {
         var op = mc.getOnlinePlayers();
         for (let index = 0; index < op.length; index++) {
             if (op[index].isOP()) {
-                op[index].tell(`§d[§bCMD§d]§e${player.realName}使用指令:/${cmd}`, 0); 
+                op[index].tell(`§l§d[§bWatchCmd§d]§e${player.realName}使用指令:/${cmd}`, 0); 
             }
         }
     }
