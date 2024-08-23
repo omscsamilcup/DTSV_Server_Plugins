@@ -1298,7 +1298,7 @@ function unBanCommand(willUnBan, player) {
         `${succ.map((v) => `- ${formatLocalItemShort(v)}§r`).join('\n')}`, player);
 }
 mc.listen('onServerStarted', () => {
-    const cmdMain = mc.newCommand('blackbe', PLUGIN_NAME, PermType.Any);
+    const cmdMain = mc.newCommand('ban', PLUGIN_NAME, PermType.Any);
     cmdMain.setEnum('enumReload', ['reload']);
     cmdMain.mandatory('enumReload', ParamType.Enum, 'enumReload', 1);
     cmdMain.overload(['enumReload']);
@@ -1506,3 +1506,6 @@ setInterval(() => {
 }, config.checkLocalListInterval);
 
 ll.registerPlugin(PLUGIN_NAME, PLUGIN_DESCRIPTION, PLUGIN_VERSION, PLUGIN_EXTRA);
+
+log('Ban插件已加載')
+log('Translate and setting config By:Samilcup')
