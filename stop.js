@@ -28,3 +28,5 @@ mc.listen('onServerStarted', () => {
         }
     })
 })
+
+log('stop插件已加載')

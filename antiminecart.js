@@ -26,4 +26,3 @@ mc.listen('onCmdBlockExecute',(isMinecart,pos) => {
 })
 
 log('Anti Minecart Crasher插件已加載')
-log('Written By:Samilcup')

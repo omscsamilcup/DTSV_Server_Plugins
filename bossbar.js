@@ -32,4 +32,3 @@ mc.listen("onServerStarted",() => {
 })
 
 log('Bossbar插件已加載')
-log('Written By:Samilcup')

@@ -1508,4 +1508,3 @@ setInterval(() => {
 ll.registerPlugin(PLUGIN_NAME, PLUGIN_DESCRIPTION, PLUGIN_VERSION, PLUGIN_EXTRA);
 
 log('Ban插件已加載')
-log('Translate and setting config By:Samilcup')

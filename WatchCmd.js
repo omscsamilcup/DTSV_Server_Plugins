@@ -34,4 +34,3 @@ mc.listen("onPlayerCmd", (player, cmd) => {
 });
 
 log('WatchCmd插件已加載')
-log('Written By:Samilcup')

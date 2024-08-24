@@ -39,4 +39,3 @@ mc.listen('onServerStarted',() => {
 })
 
 log('Daily Sign插件已加載')
-log('Written By:Samilcup')

@@ -49,4 +49,3 @@ ll.export(time_zh_CN,'timecount','time_zh_CN')
 ll.export(time_Eng,'timecount','time_Eng')
 
 log('Time Count插件已加載')
-log('Written By:Samilcup')

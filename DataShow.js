@@ -13,4 +13,3 @@ mc.listen("onServerStarted", () => {
 })
 
 log('Data Show插件已加載')
-log('Written By:Samilcup')
