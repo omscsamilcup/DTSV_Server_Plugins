@@ -43,7 +43,6 @@ client.on("ready", (msg) => {
                     if (Message.message.includes('!tps')) return;
                     if (Message.message.includes('!restart')) return;
                     if (Message.message.includes('!stop')) return;
-                    if (Message.message.includes('!start')) return;
                     console.log('[' + Message.time + ' | 聊天]' + '<' + Message.player + '>' + Message.message);
                     channel.send('[' + Message.time + ' | 聊天]' + '<' + Message.player + '>' + Message.message);
                     break;
@@ -139,21 +138,6 @@ client.on("ready", (msg) => {
                         conn.send(JSON.stringify({
                             type: 'stop'
                         }))
-                    } else {
-                        channel.send(`<@${msg.author.id}>你沒有這個權力使用這個指令！`)
-                    }
-                }
-            }
-            if (msg.channel.id === channelId) {
-                if (msg.author.id === client.user.id) return;
-                if (!msg.content || msg.content === "") return;
-                if (msg.content == "!start") {
-                    if (msg.author.id === client.user.id) return;
-                    if (msg.member.roles.cache.has('1259525170658545674')) {
-                    if (msg.author.id === client.user.id) return;
-                        console.log('Server Start');
-                        var wshShell = new ActiveXObject("WScript.Shell");
-                        wshShell.Run("C:\\DTSV Server\\DTSV_Lite_Server_1.21.2\\BDS-Restart.vbs");
                     } else {
                         channel.send(`<@${msg.author.id}>你沒有這個權力使用這個指令！`)
                     }
