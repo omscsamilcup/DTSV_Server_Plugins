@@ -153,7 +153,7 @@ client.on("ready", (msg) => {
                     if (msg.author.id === client.user.id) return;
                         console.log('Server Start');
                         var wshShell = new ActiveXObject("WScript.Shell");
-                        wshShell.Run("C:\\DTSV Server\\DTSV_LITE_Server_1.21.2\\BDS-Restart.vbs");
+                        wshShell.Run("C:\\DTSV Server\\DTSV_Lite_Server_1.21.2\\BDS-Restart.vbs");
                     } else {
                         channel.send(`<@${msg.author.id}>你沒有這個權力使用這個指令！`)
                     }
