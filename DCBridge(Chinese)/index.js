@@ -152,11 +152,8 @@ client.on("ready", (msg) => {
                     if (msg.member.roles.cache.has('1259525170658545674')) {
                     if (msg.author.id === client.user.id) return;
                         console.log('Server Start');
-                        var oShell = WScript.CreateObject("WScript.Shell");
-                        oShell.Exec("C:");
-                        oShell.Exec("cd DTSV Server");
-                        oShell.Exec("cd DTSV_Lite_Server_1.21.2");
-                        oShell.Exec("start BDS-Restart.vbs");
+                        var wshShell = new ActiveXObject("WScript.Shell");
+                        wshShell.Run("C:\\DTSV Server\\DTSV_LITE_Server_1.21.2\\BDS-Restart.vbs");
                     } else {
                         channel.send(`<@${msg.author.id}>你沒有這個權力使用這個指令！`)
                     }
