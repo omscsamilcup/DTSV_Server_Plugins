@@ -12,21 +12,23 @@ ll.registerPlugin(
 //LiteLoaderScript Dev Helper
 /// <reference path="d:\/Library/JS/Api.js" /> 
 
-
-mc.listen('onServerStarted', () => {
-    mc.regPlayerCmd('stop', '關閉伺服器，請不要隨便使用', (player) => {
-        if (player.isOP() == false)
-            player.tell('你不是OP，無法使用')
-        else {
-            mc.broadcast('§l§c管理員' + player.realName + '關閉了伺服器,伺服器將於10秒後關閉')
-            setTimeout(() => {
-                mc.broadcast('§l§c伺服器將於10秒後關閉')
-            })
-            setTimeout(() => {
-                mc.runcmd("stop");
-            }, 1000);
-        }
-    })
-})
+setInterval(() => {
+    var pls = mc.getOnlinePlayers()
+    for (pl in pls) {
+    var pl = pls[pl]
+        mc.regPlayerCmd('stop', '關閉伺服器，請不要隨便使用', (player,args) => {
+            var stop_msg = `§l§cServer Closed\nBy:${player.realName}\n§l§fWithout Reason`
+            if (!args[0] == '') {
+                stop_msg = `§l§cServer Closed\n§l§7By:§f${player.realName}\n§l§7Reason: §f${args[0]}`
+            }
+            if (player.isOP() == false) {
+                player.tell('你不是OP，無法使用')
+            } else {
+                pl.kick(stop_msg)
+                mc.runcmd('stop')
+            }
+        })
+    }}
+)
 
 log('stop插件已加載')
