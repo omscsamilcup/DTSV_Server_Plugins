@@ -1,4 +1,4 @@
-var play_time = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/AllConfig_Data/')
+/*var play_time = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/AllConfig_Data/')
 setInterval(() => {
     var pls = mc.getOnlinePlayers()
     for (pl in pls) {
@@ -29,4 +29,4 @@ setInterval(() => {
     }
 },1000)
 
-log('Time Count插件已加載')
+log('Time Count插件已加載')*/

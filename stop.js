@@ -33,8 +33,8 @@ setInterval(() => {
             if (!args[0] == '') {
                 stop_msg = `§cServer Closed\n§7By:§fConsole\n§7Reason: §f${args[0]}`
             }
-                pl.kick(stop_msg)
-                mc.runcmd('stop')
+            pl.kick(stop_msg)
+            mc.runcmd('stop')
         })
     }
 },1000)

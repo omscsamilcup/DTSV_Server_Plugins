@@ -14,7 +14,7 @@ setInterval(() => {
         //var str7 = '§l§e| §r§b           $playm分鐘$plays秒'.replace('$playm',pl.getScore('playMin')).replace('$plays',pl.getScore('playSec'))
         var str8 = '§l§e| §r§b你的設備:$os'.replace('$os', pl.getDevice().os)
         var str9 = '§l§e| §r§b在綫人數:$online/100'.replace('$online', mc.getOnlinePlayers().length)
-        var str10 = '§l§e| §r§b你的Rank:$rank'.replace('$rank', rank) //Rank NEED CHANGE
+        //var str10 = '§l§e| §r§b你的Rank:$rank'.replace('$rank', rank) //Rank NEED CHANGE
         var arr = [str0,str1,str2,str3,str4,str5,str6,str7,str8,str9,str10]
 
         var bar = '{"'
