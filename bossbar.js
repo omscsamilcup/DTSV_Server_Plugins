@@ -29,6 +29,7 @@ mc.listen("onServerStarted",() => {
             pl.tell('§l§c你已成功關閉Bossbar')
         }
     })
+    cmd.setup()
 })
 
 log('Bossbar插件已加載')
