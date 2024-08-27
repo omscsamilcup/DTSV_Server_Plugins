@@ -17,9 +17,9 @@ setInterval(() => {
     for (pl in pls) {
     var pl = pls[pl]
         mc.regPlayerCmd('stop', '關閉伺服器，請不要隨便使用', (player,args) => {
-            var stop_msg = `§l§cServer Closed\nBy:${player.realName}\n§l§fWithout Reason`
+            var stop_msg = `§cServer Closed\nBy:${player.realName}\n§fWithout Reason`
             if (!args[0] == '') {
-                stop_msg = `§l§cServer Closed\n§l§7By:§f${player.realName}\n§l§7Reason: §f${args[0]}`
+                stop_msg = `§cServer Closed\n§7By:§f${player.realName}\n§7Reason: §f${args[0]}`
             }
             if (player.isOP() == false) {
                 player.tell('你不是OP，無法使用')

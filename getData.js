@@ -1,11 +1,11 @@
 // LiteLoader-AIDS automatic generated
 /// <reference path="C:\Users\pc\.vscode\dts\HelperLib-master\src/dts/HelperLib-master/src/index.d.ts"/> 
 
-var data = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/AllConfig_Data/data.json')
-var cave_level = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/AllConfig_Data/cave_level.json')
-var miner_level = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/AllConfig_Data/miner_level.json')
-var play_time = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/AllConfig_Data/play_time.json')
-var money = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/AllConfig_Data/money.json')
+var data = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/AllConfig_Data/data')
+var cave_level = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/AllConfig_Data/cave_level')
+var miner_level = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/AllConfig_Data/miner_level')
+var play_time = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/AllConfig_Data/play_time')
+var money = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/AllConfig_Data/money')
 
 mc.listen('onJoin', function(pl) {
     let dv = pl.getDevice()

@@ -1,17 +1,17 @@
-var CurrentTPS = ll.import("QueryTPS", "GetCurrentTPS")
+//var CurrentTPS = ll.import("QueryTPS", "GetCurrentTPS")
 setInterval(() => {
     var pls = mc.getOnlinePlayers()
     for (pl in pls) {
         var pl = pls[pl]
 
         var str0 = '§l§e| §r§b玩家名稱$name'.replace('$name',pl.realName)
-        var str1 = '§l§e| §r§b你有$money空島SC幣'.replace('$money',pl.getScore('money')) //Coins NEED CHANGE
-        var str2 = '§l§e| §r§b你有$point點數 $ownercoins服主幣'.replace('$point',pl.getScore('point')).replace('$ownercoins',pl.getScore('ownercoins')) //Coins NEED CHANGE
-        var str3 = '§l§e| §r§b你的空島等級$level'.replace('$level',pl.getScore('level'))
-        var str4 = '§l§e| §r§b伺服器TPS:$tps'.replace('$tps',CurrentTPS())
+        //var str1 = '§l§e| §r§b你有$money空島SC幣'.replace('$money',pl.getScore('money')) //Coins NEED CHANGE
+        //var str2 = '§l§e| §r§b你有$point點數 $ownercoins服主幣'.replace('$point',pl.getScore('point')).replace('$ownercoins',pl.getScore('ownercoins')) //Coins NEED CHANGE
+        //var str3 = '§l§e| §r§b你的空島等級$level'.replace('$level',pl.getScore('level'))
+        //var str4 = '§l§e| §r§b伺服器TPS:$tps'.replace('$tps',CurrentTPS())
         var str5 = '§l§e| §r§b你的延遲$pingms'.replace('$ping',pl.getDevice().avgPing)
-        var str6 = '§l§e| §r§b游玩時間$playD天$playH小時'.replace('$playD',pl.getScore('playDays')).replace('$playH',pl.getScore('playHours'))
-        var str7 = '§l§e| §r§b           $playm分鐘$plays秒'.replace('$playm',pl.getScore('playMin')).replace('$plays',pl.getScore('playSec'))
+        //var str6 = '§l§e| §r§b游玩時間$playD天$playH小時'.replace('$playD',pl.getScore('playDays')).replace('$playH',pl.getScore('playHours'))
+        //var str7 = '§l§e| §r§b           $playm分鐘$plays秒'.replace('$playm',pl.getScore('playMin')).replace('$plays',pl.getScore('playSec'))
         var str8 = '§l§e| §r§b你的設備:$os'.replace('$os', pl.getDevice().os)
         var str9 = '§l§e| §r§b在綫人數:$online/100'.replace('$online', mc.getOnlinePlayers().length)
         var str10 = '§l§e| §r§b你的Rank:$rank'.replace('$rank', rank) //Rank NEED CHANGE
