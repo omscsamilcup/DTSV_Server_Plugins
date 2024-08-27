@@ -31,6 +31,7 @@ mc.listen("onPlayerCmd", (player, cmd) => {
             }
         }
     }
+    log(`§l§d[§bWatchCmd§d]§e${player.realName}使用指令:/${cmd}`)
 });
 
 log('WatchCmd插件已加載')
