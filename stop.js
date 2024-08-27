@@ -28,7 +28,7 @@ setInterval(() => {
                 mc.runcmd('stop')
             }
         })
-    }}
+    }},1000
 )
 
 log('stop插件已加載')
