@@ -53,7 +53,7 @@ function form(pl) {
         }
         db.set(pl.xuid,
             {
-                Name:pl.name,
+                Name:pl.realName,
                 Level: db.get(pl.xuid.Level),
                 Miner_Level: db.get(pl.xuid.Miner_Level),
                 Rank: db.get(pl.xuid_Rank),

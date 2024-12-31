@@ -28,7 +28,7 @@ function terms(id,pl) {
             pl.tell(msg_agree)
             db.set(pl.xuid,
                 {
-                    Name:pl.name,
+                    Name:pl.realName,
                     UUID:pl.uuid,
                     Level: db.get(pl.xuid.Level),
                     Miner_Level: db.get(pl.xuid.Miner_Level),
@@ -48,7 +48,7 @@ function terms(id,pl) {
             pl.kick(msg_disagree)
             db.set(pl.xuid,
                 {
-                    Name:pl.name,
+                    Name:pl.realName,
                     UUID:pl.uuid,
                     Level: db.get(pl.xuid.Level),
                     Miner_Level: db.get(pl.xuid.Miner_Level),
@@ -93,7 +93,7 @@ mc.listen('onJoin', (pl) => {
             if (id == 0) {
                 db.set(pl.xuid,
                     {
-                        Name:pl.name,
+                        Name:pl.realName,
                         UUID:pl.uuid,
                         Level: 1,
                         Miner_Level: '煤炭工人',
@@ -113,7 +113,7 @@ mc.listen('onJoin', (pl) => {
             } else if (id == 1) {
                 db.set(pl.xuid,
                     {
-                        Name:pl.name,
+                        Name:pl.realName,
                         UUID:pl.uuid,
                         Level: 1,
                         Miner_Level: '煤炭工人',
@@ -133,7 +133,7 @@ mc.listen('onJoin', (pl) => {
             } else if (id == 2) {
                 db.set(pl.xuid,
                     {
-                        Name:pl.name,
+                        Name:pl.realName,
                         UUID:pl.uuid,
                         Level: 1,
                         Miner_Level: 'Coal Worker',
@@ -153,7 +153,7 @@ mc.listen('onJoin', (pl) => {
             } else if (id == 3) {
                 db.set(pl.xuid,
                     {
-                        Name:pl.name,
+                        Name:pl.realName,
                         UUID:pl.uuid,
                         Level: 1,
                         Miner_Level: '石炭労働者',
