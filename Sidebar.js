@@ -1,4 +1,7 @@
-//var CurrentTPS = ll.import("QueryTPS", "GetCurrentTPS")
+var title = ['§l§cD§dTSV人生商店伺服器','§l§cDT§dSV人生商店伺服器','§l§cDTS§dV人生商店伺服器','§l§cDTSV§d人生商店伺服器','§l§cDTSV人§d生商店伺服器','§l§cDTSV人生§d商店伺服器','§l§cDTSV人生商§d店伺服器','§l§cDTSV人生商店§d伺服器','§l§cDTSV人生商店伺§d服器','§l§cDTSV人生商店伺服§d器','§l§cDTSV人生商店伺服器'
+    ,'§l§6DTSV人生商店伺服器'
+]
+
 setInterval(() => {
     var pls = mc.getOnlinePlayers()
     for (pl in pls) {

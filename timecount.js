@@ -1,32 +1,95 @@
-/*var play_time = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/AllConfig_Data/')
+var db = newKVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/DTSV_Database')
+
 setInterval(() => {
     var pls = mc.getOnlinePlayers()
     for (pl in pls) {
         var pl = pls[pl]
-        var play_time_day = play_time.get(pl.realName).day
-        var play_time_hours = play_time.get(pl.realName).hours
-        var play_time_min = play_time.get(pl.realName).min
-        var play_time_sec = play_time.get(pl.realName).sec
-        play_time_sec = ++play_time_sec
-        if (play_time.get(pl.realName).sec >= 60) {
-            play_time_min = ++play_time_min
-            play_time_sec = 0
-        }
-        if (play_time_min >= 60) {
-            play_time_hours = ++play_time_hours
-            play_time_min = 0
-        }
-        if (play_time_hours >= 24) {
-            play_time_day = ++play_time_day
-            play_time_hours = 0
-        }
-        play_time.set(pl.realName, {
-            day: play_time_day,
-            hours: play_time_hours,
-            min: play_time_min,
-            sec: play_time_sec
+        db.set(pl.xuid, {
+            Name:pl.name,
+            Level: db.get(pl.xuid.Level),
+            Miner_Level: db.get(pl.xuid.Miner_Level),
+            Rank: db.get(pl.xuid_Rank),
+            Rebirth: db.get(pl.xuid_Rebirth),
+            Money: db.get(pl.xuid.Money),
+            Bank: db.get(pl.xuid.Bank),
+            Lang: db.get(pl.xuid.Lang),                        
+            PlaytimeDay: db.get(pl.xuid.PlaytimeDay),
+            PlaytimeHrs: db.get(pl.xuid.PlaytimeHrs),
+            PlaytimeMin: db.get(pl.xuid.PlaytimeMin),
+            PlaytimeSec: ++db.get(pl.xuid.PlaytimeSec),
+            Term: db.get(pl.xuid.Term)
         })
+        if (db.get(pl.xuid.PlaytimeSec) >= 60) {
+            db.set(pl.xuid, {
+                Name:pl.name,
+                Level: db.get(pl.xuid.Level),
+                Miner_Level: db.get(pl.xuid.Miner_Level),
+                Rank: db.get(pl.xuid_Rank),
+                Rebirth: db.get(pl.xuid_Rebirth),
+                Money: db.get(pl.xuid.Money),
+                Bank: db.get(pl.xuid.Bank),
+                Lang: db.get(pl.xuid.Lang),                        
+                PlaytimeDay: db.get(pl.xuid.PlaytimeDay),
+                PlaytimeHrs: db.get(pl.xuid.PlaytimeHrs),
+                PlaytimeMin: ++db.get(pl.xuid.PlaytimeMin),
+                PlaytimeSec: db.get(pl.xuid.PlaytimeSec),
+                Term: db.get(pl.xuid.Term)
+            })
+        }
+        if (db.get(pl.xuid.PlayertimeMin) >= 60) {
+            db.set(pl.xuid, {
+                Name:pl.name,
+                Level: db.get(pl.xuid.Level),
+                Miner_Level: db.get(pl.xuid.Miner_Level),
+                Rank: db.get(pl.xuid_Rank),
+                Rebirth: db.get(pl.xuid_Rebirth),
+                Money: db.get(pl.xuid.Money),
+                Bank: db.get(pl.xuid.Bank),
+                Lang: db.get(pl.xuid.Lang),                        
+                PlaytimeDay: db.get(pl.xuid.PlaytimeDay),
+                PlaytimeHrs: ++db.get(pl.xuid.PlaytimeHrs),
+                PlaytimeMin: db.get(pl.xuid.PlaytimeMin),
+                PlaytimeSec: db.get(pl.xuid.PlaytimeSec),
+                Term: db.get(pl.xuid.Term)
+            })
+        }
+        if (db.get(pl.xuid.PlayertimeHrs) >= 24) {
+            db.set(pl.xuid, {
+                Name:pl.name,
+                Level: db.get(pl.xuid.Level),
+                Miner_Level: db.get(pl.xuid.Miner_Level),
+                Rank: db.get(pl.xuid_Rank),
+                Rebirth: db.get(pl.xuid_Rebirth),
+                Money: db.get(pl.xuid.Money),
+                Bank: db.get(pl.xuid.Bank),
+                Lang: db.get(pl.xuid.Lang),                        
+                PlaytimeDay: ++db.get(pl.xuid.PlaytimeDay),
+                PlaytimeHrs: db.get(pl.xuid.PlaytimeHrs),
+                PlaytimeMin: db.get(pl.xuid.PlaytimeMin),
+                PlaytimeSec: db.get(pl.xuid.PlaytimeSec),
+                Term: db.get(pl.xuid.Term)
+            })
+        }
     }
 },1000)
 
-log('Time Count插件已加載')*/
+function time_zh_TW(pl) {
+    var time = pl.getScore('playDays') + '天' + pl.getScore('playHours') + '小時' + pl.getScore('playMin') + '分鐘' + pl.getScore('playSec') + '秒'
+}
+
+function time_Eng(pl) {
+    var time = pl.getScore('playDays') + 'Day' + pl.getScore('playHours') + 'Hours' + pl.getScore('playMin') + 'Min' + pl.getScore('playSec') + 'Sec'
+}
+
+function time_zh_CN(pl) {
+    var time = pl.getScore('playDays') + '天' + pl.getScore('playHours') + '小时' + pl.getScore('playMin') + '分钟' + pl.getScore('playSec') + '秒'
+}
+
+function time_Jap() {
+    var time = `${db.get(pl.xuid.PlaytimeDay)}日${db.get(pl.xuid.PlaytimeHrs)}時間${db.get(pl.xuid.PlaytimeMin)}分${db.get(pl.xuid.PlaytimeSec)}秒`
+}
+
+ll.exports(time_zh_TW(),'timecount','time_zh_TW')
+ll.exports(time_zh_CN(),'timecount','time_zh_CN')
+ll.exports(time_Eng(),'timecount','time_Eng')
+ll.exports(time_Jap(),'timecount','Jap')
