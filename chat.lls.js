@@ -7,5 +7,3 @@ ll.registerPlugin(
     /* version */ [0,0,1],
     /* otherInformation */ null
 ); 
-
-
