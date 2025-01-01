@@ -8,7 +8,7 @@ ll.registerPlugin(
     /* otherInformation */ null
 ); 
 
-var db = newKVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/DTSV_Database')
+var db = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/DTSV_Database')
 var sidebardb = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/DTSV_Database/Sidebar')
 var fm = mc.newSimpleForm()
 fm.setContent('§l§b請選擇你將在本伺服器中所使用的語言\n请选择你将在本伺服器所使用的语言\n§l§dPlease select the language you will use on this server\n§l§6このサーバーで使用する言語を選択してください\n\n本服主要所使用的語言是繁體中文、簡體中文、英文和日文，本服的翻譯並非完全正確，如有錯誤歡迎向本服糾正。\n本服主要所使用的语言是繁体中文、简体中文、英文和日文，本服的翻译并非完全正确，如有错误欢迎向本服纠正。\nThe main languages ​​used in this server are Traditional Chinese, Simplified Chinese, English and Japanese. The translation of this server is not completely correct. If there are any errors, please feel free to correct them to this server.\nこのサーバーで使用されている主な言語は繁体字中国語、簡体字中国語、英語、日本語です。このサーバーの翻訳は完全に正しいわけではありません。誤りがある場合は、お気軽に修正してください。\n\n\n\n如選擇錯誤，可與游戲開始後輸入/lang,/language更改語言。\n如选择错误，可与游戏开始后输入/lang,/language更改语言。\nIf you make the wrong choice, you can change the language by typing /lang,/language after starting the game.\n選択を間違えた場合は、ゲームの開始後に「/lang,/ language」と入力して言語を変更できます。')
