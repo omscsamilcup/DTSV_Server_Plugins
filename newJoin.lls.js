@@ -9,6 +9,7 @@ ll.registerPlugin(
 ); 
 
 var db = newKVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/DTSV_Database')
+var sidebardb = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/DTSV_Database/Sidebar')
 var fm = mc.newSimpleForm()
 fm.setContent('§l§b請選擇你將在本伺服器中所使用的語言\n请选择你将在本伺服器所使用的语言\n§l§dPlease select the language you will use on this server\n§l§6このサーバーで使用する言語を選択してください\n\n本服主要所使用的語言是繁體中文、簡體中文、英文和日文，本服的翻譯並非完全正確，如有錯誤歡迎向本服糾正。\n本服主要所使用的语言是繁体中文、简体中文、英文和日文，本服的翻译并非完全正确，如有错误欢迎向本服纠正。\nThe main languages ​​used in this server are Traditional Chinese, Simplified Chinese, English and Japanese. The translation of this server is not completely correct. If there are any errors, please feel free to correct them to this server.\nこのサーバーで使用されている主な言語は繁体字中国語、簡体字中国語、英語、日本語です。このサーバーの翻訳は完全に正しいわけではありません。誤りがある場合は、お気軽に修正してください。\n\n\n\n如選擇錯誤，可與游戲開始後輸入/lang,/language更改語言。\n如选择错误，可与游戏开始后输入/lang,/language更改语言。\nIf you make the wrong choice, you can change the language by typing /lang,/language after starting the game.\n選択を間違えた場合は、ゲームの開始後に「/lang,/ language」と入力して言語を変更できます。')
 fm.addButton('§l§e繁體中文')
@@ -70,6 +71,56 @@ function terms(id,pl) {
     })
 }
 
+function sidebar(pl) {
+    sidebardb.set(pl.xuid,
+        {
+            line0: true,
+            line1: true,
+            line2: true,
+            line3: true,
+            line4: true,
+            line5: true,
+            line6: false,
+            line7: false,
+            line8: false,
+            line9: false,
+            line10: false,
+            line11: true,
+            line12: true,
+            line13: true
+        }
+    )
+}
+
+function playerdata(id,pl) {
+    var data = lang_playerdata.find((datas) => datas.lang === id)
+    db.set(pl.xuid,
+        {
+            Name:pl.realName,
+            UUID:pl.uuid,
+            Level: 1,
+            Miner_Level: data.Miner_Level,
+            Rank: data.Rank,
+            Rebirth: 0,
+            Money: 100,
+            Bank: 0,
+            Lang: data.Language, //TChi = Tradtional Chinese //SChi = Simplified Chinese
+            PlaytimeDay: 0,
+            PlaytimeHrs: 0,
+            PlaytimeMin: 0,
+            PlaytimeSec: 0,
+            Term: 0
+        }
+    )
+}
+
+var lang_playerdata = [
+    { lang: 0, Miner_Level: '煤炭工人', Rank: '玩家', Language:'TChi'},
+    { lang: 1, Miner_Level: '煤炭工人', Rank: '玩家', Language:'SChi'},
+    { lang: 2, Miner_Level: 'Coal Worker', Rank: 'Player', Language:'Eng'},
+    { lang: 3, Miner_Level: '石炭労働者', Rank: 'プレーヤー', Language:'Jap'}
+]
+ 
 var lang_term = [
     { lang: 0, title: '', content: '', button_agree: '§l§a同意', button_disagree: '§l§c不同意', msg_agree: '§l§a感謝你同意本服條款', msg_disagree: '§l§c你未能夠同意本服條款'},
     { lang: 1, title: '', content: '', button_agree: '§l§a同意', button_disagree: '§l§c不同意', msg_agree: '§l§a感谢你同意本服条款', msg_disagree: '§l§c你未能够同意本服条款'},
@@ -91,85 +142,21 @@ mc.listen('onJoin', (pl) => {
             }
             log(pl.realName + `首次加入伺服器，玩家所選取的語言是：${lang}`)
             if (id == 0) {
-                db.set(pl.xuid,
-                    {
-                        Name:pl.realName,
-                        UUID:pl.uuid,
-                        Level: 1,
-                        Miner_Level: '煤炭工人',
-                        Rank: '玩家',
-                        Rebirth: 0,
-                        Money: 100,
-                        Bank: 0,
-                        Lang: 'TChi', //TChi = Tradtional Chinese //SChi = Simplified Chinese
-                        PlaytimeDay: 0,
-                        PlaytimeHrs: 0,
-                        PlaytimeMin: 0,
-                        PlaytimeSec: 0,
-                        Term: 0
-                    }
-                )
+                playerdata(id,pl)
                 terms(id,pl)
+                sidebar(pl)
             } else if (id == 1) {
-                db.set(pl.xuid,
-                    {
-                        Name:pl.realName,
-                        UUID:pl.uuid,
-                        Level: 1,
-                        Miner_Level: '煤炭工人',
-                        Rank: '玩家',
-                        Rebirth: 0,
-                        Money: 100,
-                        Bank: 0,
-                        Lang: 'SChi', //TChi = Tradtional Chinese //SChi = Simplified Chinese
-                        PlaytimeDay: 0,
-                        PlaytimeHrs: 0,
-                        PlaytimeMin: 0,
-                        PlaytimeSec: 0,
-                        Term: 0
-                    }
-                )
+                playerdata(id,pl)
                 terms(id,pl)
+                sidebar(pl)
             } else if (id == 2) {
-                db.set(pl.xuid,
-                    {
-                        Name:pl.realName,
-                        UUID:pl.uuid,
-                        Level: 1,
-                        Miner_Level: 'Coal Worker',
-                        Rank: 'Player',
-                        Rebirth: 0,
-                        Money: 100,
-                        Bank: 0,
-                        Lang: 'Eng',
-                        PlaytimeDay: 0,
-                        PlaytimeHrs: 0,
-                        PlaytimeMin: 0,
-                        PlaytimeSec: 0,
-                        Term: 0
-                    }
-                )
+                playerdata(id,pl)
                 terms(id,pl)
+                sidebar(pl)
             } else if (id == 3) {
-                db.set(pl.xuid,
-                    {
-                        Name:pl.realName,
-                        UUID:pl.uuid,
-                        Level: 1,
-                        Miner_Level: '石炭労働者',
-                        Rank: 'プレーヤー',
-                        Rebirth: 0,
-                        Money: 100,
-                        Bank: 0,
-                        Lang: 'Jap',
-                        PlaytimeDay: 0,
-                        PlaytimeHrs: 0,
-                        PlaytimeMin: 0,
-                        PlaytimeSec: 0,
-                        Term: 0
-                    }
-                )
+                playerdata(id,pl)
                 terms(id,pl)
+                sidebar(pl)
             }
         })
     }

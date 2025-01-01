@@ -34,6 +34,7 @@ setInterval(() => {
         var str12 = `§l§e${sidebar.line12}`
         var str13 = `§l§e${sidebar.line13}`
 
+        //true
         if (sidebar.get(pl.xuid.line0) == true) {
             arr.push(str0)
         }
@@ -59,6 +60,35 @@ setInterval(() => {
             arr.push(str12)
         }
         if (sidebar.get(pl.xuid.line13) == true) {
+            arr.push(str13)
+        }
+
+        //false
+        if (sidebar.get(pl.xuid.line0) == false && arr.includes(str0)) {
+            arr.splice(str0)
+        }
+        if (sidebar.get(pl.xuid.line1) == false && arr.includes(str1)) {
+            arr.push(str1)
+        }
+        if (sidebar.get(pl.xuid.line2) == false && arr.includes(str2)) {
+            arr.push(str2)
+        }
+        if (sidebar.get(pl.xuid.line3) == false && arr.includes(str3)) {
+            arr.push(str3)
+        }
+        if (sidebar.get(pl.xuid.line4) == false && arr.includes(str4)) {
+            arr.push(str4)
+        }
+        if (sidebar.get(pl.xuid.line5) == false && arr.includes(str5)) {
+            arr.push(str5)
+        }
+        if (sidebar.get(pl.xuid.line11) == false && arr.includes(str11)) {
+            arr.push(str11)
+        }
+        if (sidebar.get(pl.xuid.line12) == false && arr.includes(str12)) {
+            arr.push(str12)
+        }
+        if (sidebar.get(pl.xuid.line13) == false && arr.includes(str13)) {
             arr.push(str13)
         }
         
