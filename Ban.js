@@ -1265,8 +1265,8 @@ function banCommand(willBan, time, reason, player) {
 async function banForm(player) {
     const players = getOnlineRealPlayers();
     const form = new CustomFormEx(PLUGIN_NAME)
-        .addDropdown('playerDropdown', '如果你想要封禁的玩家在綫，請在此選擇', players.map((p) => p.realName))
-        .addInput('playerInput', '如果玩家不在綫，請在此輸入他的Minecraft ID')
+        .addDropdown('playerDropdown', '如果你想要封禁的玩家在線，請在此選擇', players.map((p) => p.realName))
+        .addInput('playerInput', '如果玩家不在線，請在此輸入他的Minecraft ID')
         .addInput('time', '請輸入封禁之時間，單位為分鐘 (如果值 為空 / 非數字 / 小於或等於 0，即代表永久)')
         .addInput('reason', '請輸入封禁原因（可選）');
     const res = await form.sendAsync(player);

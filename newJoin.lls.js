@@ -76,6 +76,7 @@ function terms(id,pl) {
 function sidebar(pl) {
     sidebardb.set(pl.xuid,
         {
+            sidebar: true,
             line0: true,
             line1: true,
             line2: true,
@@ -87,8 +88,8 @@ function sidebar(pl) {
             line8: false,
             line9: false,
             line10: false,
-            line11: true,
-            line12: true,
+            line11: false,
+            line12: false,
             line13: true
         }
     )

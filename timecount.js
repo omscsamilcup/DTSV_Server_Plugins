@@ -92,4 +92,4 @@ function time_Jap() {
 ll.exports(time_zh_TW(),'timecount','time_zh_TW')
 ll.exports(time_zh_CN(),'timecount','time_zh_CN')
 ll.exports(time_Eng(),'timecount','time_Eng')
-ll.exports(time_Jap(),'timecount','Jap')
+ll.exports(time_Jap(),'timecount','time_Jap')
