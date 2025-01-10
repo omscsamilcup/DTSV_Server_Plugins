@@ -10,11 +10,10 @@ mc.listen("onServerStarted",() => {
                 if (i > 3) {
                     i = 0
                 }
-            if (pl.getScore('bossbar') == 0) {
-                pl.setBossBar(1,bossbar[i], 100,8)
+            //if (pl.getScore('bossbar') == 0) {
+                //pl.setBossBar(1,bossbar[i], 100,8)
                 i += 1
             }
-        }
     },2000)
     
     var cmd = mc.newCommand('bossbar','開關Bossbar')
@@ -29,8 +28,8 @@ mc.listen("onServerStarted",() => {
             pl.tell('§l§c你已成功關閉Bossbar')
         }
             */
-    })
     cmd.setup()
+})
 })
 
 log('Bossbar插件已加載')

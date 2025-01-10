@@ -1,4 +1,4 @@
-var db = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/DTSV_Database')
+var db = new KVDatabase('./plugins/DTSV_Database/PlayerData')
 
 var cmd = mc.newCommand('language','',PermType.Any)
 cmd.setAlias('lang')

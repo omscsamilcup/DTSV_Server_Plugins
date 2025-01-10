@@ -1,10 +1,10 @@
 // LiteLoader-AIDS automatic generated
 /// <reference path="C:\Users\pc\.vscode\dts\HelperLib-master\src/dts/HelperLib-master/src/index.d.ts"/> 
 
-var db = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/DTSV_Database/PlayerData')
-var sidebardb = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/DTSV_Database/Sidebar')
-var serverdb = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/DTSV_Database/ServerData')
-var sessiondb = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/DTSV_Database/SessionData')
+var db = new KVDatabase('./plugins/DTSV_Database/PlayerData')
+var sidebardb = new KVDatabase('./plugins/DTSV_Database/Sidebar')
+var serverdb = new KVDatabase('./plugins/DTSV_Database/ServerData')
+var sessiondb = new KVDatabase('./plugins/DTSV_Database/SessionData')
 var time_zh_TW = ll.imports(time_zh_TW(),'time_zh_TW')
 var time_zh_CN = ll.imports(time_zh_CN(),'time_zh_CN')
 var time_Eng = ll.imports(time_Eng(), 'time_Eng')
@@ -582,7 +582,6 @@ setInterval(() => {
     }
 }, 500);
 
-mc.listen("onServerStarted",() => {
     var cmd = mc.newCommand('sidebar', '§l§bSidebar Settings', PermType.Any)
     cmd.setEnum('enum', ['on', 'Settings'])
     cmd.mandatory('enum', ParamType.Enum, 'on', 1)
@@ -653,4 +652,5 @@ mc.listen("onServerStarted",() => {
                 Simpleform(langid)
         }
     })
-})
+    cmd.setup()
+    log('Setup command successful')

@@ -2,7 +2,7 @@
 /// <reference path="C:\Users\pc\.vscode\dts\HelperLib-master\src/dts/HelperLib-master/src/index.d.ts"/> 
 
 mc.regPlayerCmd('ping','獲得你的延遲值', (pl) => {
-    var ping = pl.getDevice().avgPing
+    var ping = pl.getDevice().avgPing.toFixed(2)
     if (ping < 110) {
         ping = '§l§a'+ping
     }else if (ping < 250) {

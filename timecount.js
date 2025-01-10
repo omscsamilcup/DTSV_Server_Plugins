@@ -1,6 +1,6 @@
-var db = new KVDatabase('C:/DTSV_Server/DTSV_Lite_Server/plugins/DTSV_Database')
+var db = new KVDatabase('./plugins/DTSV_Database/PlayerData')
 
-setInterval(() => {
+/*setInterval(() => {
     var pls = mc.getOnlinePlayers()
     for (pl in pls) {
         var pl = pls[pl]
@@ -16,7 +16,7 @@ setInterval(() => {
             PlaytimeDay: db.get(pl.xuid.PlaytimeDay),
             PlaytimeHrs: db.get(pl.xuid.PlaytimeHrs),
             PlaytimeMin: db.get(pl.xuid.PlaytimeMin),
-            PlaytimeSec: ++db.get(pl.xuid.PlaytimeSec),
+            PlaytimeSec: (db.get(pl.xuid.PlaytimeSec) + 1),
             Term: db.get(pl.xuid.Term)
         })
         if (db.get(pl.xuid.PlaytimeSec) >= 60) {
@@ -31,7 +31,7 @@ setInterval(() => {
                 Lang: db.get(pl.xuid.Lang),                        
                 PlaytimeDay: db.get(pl.xuid.PlaytimeDay),
                 PlaytimeHrs: db.get(pl.xuid.PlaytimeHrs),
-                PlaytimeMin: ++db.get(pl.xuid.PlaytimeMin),
+                PlaytimeMin: (db.get(pl.xuid.PlaytimeMin) + 1),
                 PlaytimeSec: db.get(pl.xuid.PlaytimeSec),
                 Term: db.get(pl.xuid.Term)
             })
@@ -47,7 +47,7 @@ setInterval(() => {
                 Bank: db.get(pl.xuid.Bank),
                 Lang: db.get(pl.xuid.Lang),                        
                 PlaytimeDay: db.get(pl.xuid.PlaytimeDay),
-                PlaytimeHrs: ++db.get(pl.xuid.PlaytimeHrs),
+                PlaytimeHrs: (db.get(pl.xuid.PlaytimeHrs) + 1),
                 PlaytimeMin: db.get(pl.xuid.PlaytimeMin),
                 PlaytimeSec: db.get(pl.xuid.PlaytimeSec),
                 Term: db.get(pl.xuid.Term)
@@ -63,7 +63,7 @@ setInterval(() => {
                 Money: db.get(pl.xuid.Money),
                 Bank: db.get(pl.xuid.Bank),
                 Lang: db.get(pl.xuid.Lang),                        
-                PlaytimeDay: ++db.get(pl.xuid.PlaytimeDay),
+                PlaytimeDay: (db.get(pl.xuid.PlaytimeDay) + 1),
                 PlaytimeHrs: db.get(pl.xuid.PlaytimeHrs),
                 PlaytimeMin: db.get(pl.xuid.PlaytimeMin),
                 PlaytimeSec: db.get(pl.xuid.PlaytimeSec),
@@ -93,3 +93,4 @@ ll.exports(time_zh_TW(),'timecount','time_zh_TW')
 ll.exports(time_zh_CN(),'timecount','time_zh_CN')
 ll.exports(time_Eng(),'timecount','time_Eng')
 ll.exports(time_Jap(),'timecount','time_Jap')
+*/
